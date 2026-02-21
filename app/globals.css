@@ -1,17 +1,27 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+@import "tailwind-animate";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Apex Brand Colors */
-  --apex-primary: #3589ff;
-  --apex-primary-light: #ffb3a0;
-  --apex-primary-dark: #e55a24;
-  --apex-gray-light: #f5f5f5;
-  --apex-gray-medium: #888888;
-  --apex-gray-dark: #333333;
-  --apex-white: #ffffff;
+  /* Tigat Tech Brand Colors */
+  --tigat-primary: #0187ba;
+  --tigat-primary-light: #95cadc;
+  --tigat-accent: #ff804e;
+  --tigat-accent-dark: #e56a3a;
+  --tigat-gray-light: #f5f5f5;
+  --tigat-gray-medium: #888888;
+  --tigat-gray-dark: #333333;
+  --tigat-white: #ffffff;
+
+  /* Legacy aliases for backward compatibility */
+  --apex-primary: var(--tigat-primary);
+  --apex-primary-light: var(--tigat-primary-light);
+  --apex-primary-dark: var(--tigat-accent-dark);
+  --apex-gray-light: var(--tigat-gray-light);
+  --apex-gray-medium: var(--tigat-gray-medium);
+  --apex-gray-dark: var(--tigat-gray-dark);
+  --apex-white: var(--tigat-white);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
