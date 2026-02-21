@@ -1,5 +1,5 @@
-import HomeHero from "@/components/home/home-hero";
-import ServicesOverview from "@/components/home/services-overview";
+import HeroSection from "@/components/home_new/HeroSection";
+import ServicesSection from "@/components/home_new/ServicesSection";
 import WhyChooseUs from "@/components/home/why-choose-us";
 import PortfolioShowcase from "@/components/home/portfolio-showcase";
 import FAQ from "@/components/common/faq";
@@ -8,8 +8,8 @@ import Testimonials from "@/components/common/testimonials";
 export default function Home() {
   return (
     <main className="min-h-screen ">
-      <HomeHero />
-      <ServicesOverview />
+      <HeroSection />
+      <ServicesSection />
       <WhyChooseUs />
       <PortfolioShowcase />
       <FAQ />
