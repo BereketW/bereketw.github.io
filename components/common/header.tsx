@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -14,16 +15,14 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div
-              className="w-8 h-8 rounded-full"
-              style={{ backgroundColor: "var(--apex-primary)" }}
-            ></div>
-            <span
-              className="font-bold text-lg"
-              style={{ color: "var(--apex-gray-dark)" }}
-            >
-              Apex
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Tigat Tech"
+              width={150}
+              height={36}
+              className=" object-contain"
+            />
+           
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,7 +40,7 @@ export default function Header() {
                 key={item}
                 href={`/${item.toLowerCase()}`}
                 className="text-sm transition-colors hover:opacity-70"
-                style={{ color: "var(--apex-gray-medium)" }}
+                style={{ color: "var(--tigat-gray-medium)" }}
               >
                 {item}
               </Link>
@@ -51,7 +50,7 @@ export default function Header() {
           <Link href="/contact" className="hover:pointer">
             <Button
               className="hidden md:block text-white"
-              style={{ backgroundColor: "var(--apex-primary)" }}
+              style={{ backgroundColor: "var(--tigat-accent)" }}
             >
               Contact Us
             </Button>
@@ -79,7 +78,7 @@ export default function Header() {
                 key={item}
                 href={`/${item.toLowerCase()}`}
                 className="text-sm bg-gray-100 w-full text-center  py-2 rounded-lg"
-                style={{ color: "var(--apex-gray-medium)" }}
+                style={{ color: "var(--tigat-gray-medium)" }}
               >
                 {item}
               </Link>
