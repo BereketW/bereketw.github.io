@@ -26,23 +26,20 @@ export default function PortfolioShowcase() {
   ];
 
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
             <div
               className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: "var(--apex-primary)" }}
+              style={{ backgroundColor: "var(--tigat-primary)" }}
             ></div>
           </div>
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ color: "var(--apex-gray-dark)" }}
-          >
+          <h2 className="mb-4 text-slate-900">
             A Glimpse Into Our Digital Excellence
           </h2>
-          <p className="text-lg" style={{ color: "var(--apex-gray-medium)" }}>
+          <p className="text-slate-500">
             Explore our portfolio of successful projects and transformations
           </p>
         </div>
@@ -52,10 +49,10 @@ export default function PortfolioShowcase() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
             >
               {/* Image */}
-              <div className="relative h-48 bg-gray-200">
+              <div className="relative h-48 bg-slate-100">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -66,17 +63,11 @@ export default function PortfolioShowcase() {
 
               {/* Content */}
               <div className="p-6">
-                <h3
-                  className="text-xl font-bold mb-2"
-                  style={{ color: "var(--apex-gray-dark)" }}
-                >
+                <h3 className="mb-2 text-slate-900">
                   {project.title}
                 </h3>
-                <p
-                  className="text-sm"
-                  style={{ color: "var(--apex-gray-medium)" }}
-                >
-                  {project.category} • {project.subcategory}
+                <p className="text-xs text-slate-500 uppercase tracking-wide font-medium">
+                  {project.category} · {project.subcategory}
                 </p>
               </div>
             </div>
@@ -86,8 +77,8 @@ export default function PortfolioShowcase() {
         {/* View All Button */}
         <div className="flex justify-center">
           <button
-            className="px-8 py-3 rounded-full text-white font-medium transition-opacity hover:opacity-90 flex items-center gap-2"
-            style={{ backgroundColor: "var(--apex-primary)" }}
+            className="px-8 py-3 rounded-full text-white font-semibold transition-opacity hover:opacity-90 flex items-center gap-2 shadow-md"
+            style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}
           >
             View All Projects
             <ArrowRight className="w-4 h-4" />
