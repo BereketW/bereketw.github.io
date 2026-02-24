@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <div className=" bg-background">
       {/* <Navigation /> */}
-      <main className="relative mt-10 bg-gray-50">
+      <main className="relative mt-10 bg-white">
         <HeroSection />
         <TimelineSection />
         <TeamSection />
