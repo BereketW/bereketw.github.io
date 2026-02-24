@@ -222,7 +222,7 @@ export default function ServicesSection() {
               star
             </span>
           </div>
-          <h2 className="mb-4 text-3xl font-bold text-slate-900 dark:text-slate-100 md:text-4xl">
+          <h2 className="mb-4 text-slate-900 dark:text-slate-100">
             Discover Our Full Range of Services
           </h2>
           <p className="mx-auto max-w-2xl text-slate-500 dark:text-slate-400">

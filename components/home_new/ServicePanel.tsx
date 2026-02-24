@@ -33,12 +33,12 @@ export default function ServicePanel({
             <div className="flex h-12 w-12 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(1,135,186,0.1)" }}>
               <span className="material-icons-round" style={{ color: "var(--tigat-primary)" }}>{icon}</span>
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            <h3 className="text-slate-900 dark:text-slate-100">
               {title}
             </h3>
           </div>
           <a
-            className="hidden items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800 sm:inline-flex"
             href="#"
           >
             Book a Call
@@ -65,7 +65,7 @@ export default function ServicePanel({
         </div>
         <div className="pt-4">
           <a
-            className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white shadow-md transition-all hover:opacity-90 dark:shadow-none"
+            className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90 dark:shadow-none"
             href="#"
             style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}
           >

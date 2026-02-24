@@ -79,10 +79,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 md:text-6xl">
+      <h1 className="mx-auto mb-6 max-w-4xl text-slate-900 dark:text-slate-100">
         Elevate Your Digital Presence with <span style={{ color: "var(--tigat-primary)" }}>Tigat Tech</span>
       </h1>
-      <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-slate-500 dark:text-slate-400 md:text-lg">
+      <p className="mx-auto mb-10 max-w-2xl text-slate-500 dark:text-slate-400">
         We specialize in crafting cutting-edge websites and applications that resonate with
         your audience. Let us transform your vision into a captivating digital reality,
         setting your brand apart in the digital sphere.
@@ -90,7 +90,7 @@ export default function HeroSection() {
 
       <div className="mb-20 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <a
-          className="group inline-flex items-center gap-2 rounded-full px-8 py-3 font-medium text-white shadow-lg transition-all hover:opacity-90"
+          className="group inline-flex items-center gap-2 rounded-full px-8 py-3 font-semibold text-white shadow-lg transition-all hover:opacity-90"
           href="#"
           style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}
         >
@@ -98,7 +98,7 @@ export default function HeroSection() {
           Schedule a Call
         </a>
         <a
-          className="group inline-flex items-center gap-2 rounded-full border-2 px-8 py-3 font-medium transition-all hover:bg-slate-50 dark:hover:bg-slate-800"
+          className="group inline-flex items-center gap-2 rounded-full border-2 px-8 py-3 font-semibold transition-all hover:bg-slate-50 dark:hover:bg-slate-800"
           href="#"
           style={{ borderColor: "var(--tigat-primary)", color: "var(--tigat-primary)" }}
         >
