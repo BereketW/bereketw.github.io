@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Tigat Tech Brand Colors */
+  /* ─── Tigat Tech Brand Colors ─────────────────────────── */
   --tigat-primary: #0187ba;
   --tigat-primary-light: #95cadc;
   --tigat-accent: #ff804e;
@@ -22,6 +22,37 @@
   --apex-gray-medium: var(--tigat-gray-medium);
   --apex-gray-dark: var(--tigat-gray-dark);
   --apex-white: var(--tigat-white);
+
+  /* ─── Typography Scale ────────────────────────────────── */
+  /* Font family — change ONE value to restyle the whole site */
+  --font-primary: var(--font-poppins), "Poppins", sans-serif;
+
+  /* Font sizes */
+  --text-hero: clamp(2.25rem, 5vw, 3.75rem);   /* H1  — homepage hero */
+  --text-section: clamp(1.75rem, 3vw, 2.25rem); /* H2  — section headings */
+  --text-card: 1.25rem;                          /* H3  — card/panel titles */
+  --text-body: 1rem;                             /* p   — body copy */
+  --text-small: 0.875rem;                        /* sm  — captions, nav */
+  --text-xs: 0.75rem;                            /* xs  — badges, labels */
+
+  /* Font weights */
+  --fw-extrabold: 800;  /* hero headline */
+  --fw-bold: 700;       /* section headings */
+  --fw-semibold: 600;   /* card titles, CTAs */
+  --fw-medium: 500;     /* subheadings, badges */
+  --fw-regular: 400;    /* body copy */
+  --fw-light: 300;      /* subtle captions */
+
+  /* Line heights */
+  --lh-tight: 1.2;      /* headlines */
+  --lh-snug: 1.375;     /* sub-headings */
+  --lh-normal: 1.5;     /* general text */
+  --lh-relaxed: 1.65;   /* body paragraphs */
+
+  /* Letter spacing */
+  --ls-tight: -0.02em;  /* large display text */
+  --ls-normal: 0em;
+  --ls-wide: 0.06em;    /* caps/labels */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -95,8 +126,8 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: var(--font-poppins), "Poppins", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -142,5 +173,34 @@
 
   body {
     @apply bg-[#f1f5f9] text-foreground min-h-screen;
+    font-family: var(--font-primary);
+    font-size: var(--text-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-normal);
+  }
+
+  h1 {
+    font-size: var(--text-hero);
+    font-weight: var(--fw-extrabold);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+  }
+
+  h2 {
+    font-size: var(--text-section);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-tight);
+  }
+
+  h3 {
+    font-size: var(--text-card);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+  }
+
+  p {
+    font-size: var(--text-body);
+    line-height: var(--lh-relaxed);
   }
 }
