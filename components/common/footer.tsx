@@ -340,7 +340,7 @@ const Footer = () => {
             <div className="absolute inset-0 blur-2xl opacity-20 rounded-full transform scale-150" style={{ backgroundColor: "var(--tigat-primary)" }}></div>
           </div>
 
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-gray-900 mb-4">
             Subscribe to Our Newsletter!
           </h3>
 

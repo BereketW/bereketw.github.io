@@ -161,7 +161,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 md:py-24 ">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 ">
         <div className="flex max-sm:flex-col  gap-12">
           {/* Left Side */}
@@ -169,60 +169,47 @@ export default function FAQ() {
             <div className="flex items-center gap-3 mb-6">
               <div
                 className="w-3 h-3 rounded-full"
-                style={{ backgroundColor: "var(--apex-primary)" }}
+                style={{ backgroundColor: "var(--tigat-primary)" }}
               ></div>
               <span
-                className="text-sm font-medium"
-                style={{ color: "var(--apex-gray-medium)" }}
+                className="text-sm font-medium text-slate-500"
               >
                 FAQ
               </span>
             </div>
 
-            <h2
-              className="text-4xl font-bold mb-6"
-              style={{ color: "var(--apex-gray-dark)" }}
-            >
+            <h2 className="mb-6 text-slate-900">
               Common Queries, Clear Answers
             </h2>
 
-            <p
-              className="text-base mb-8 leading-relaxed"
-              style={{ color: "var(--apex-gray-medium)" }}
-            >
+            <p className="text-sm mb-8 leading-relaxed text-slate-500">
               We believe in transparency and aim to provide you with all the
               information you need to make informed decisions about our
               services.
             </p>
 
-            <div className="flex flex-col justify-center items-center mx-auto bg-gray-50 border-4 border-gray-100 rounded-lg p-6 mb-6">
+            <div className="flex flex-col justify-center items-center mx-auto bg-slate-50 border border-slate-100 rounded-2xl p-6 mb-6">
               <div className="mb-4">
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center border-8 border-red-100"
-                  style={{ backgroundColor: "var(--apex-primary)" }}
+                  className="w-16 h-16 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "rgba(1,135,186,0.1)" }}
                 >
-                  <Zap className="w-6 h-6 text-white " />
+                  <Zap className="w-6 h-6" style={{ color: "var(--tigat-primary)" }} />
                 </div>
               </div>
 
-              <p
-                className="text-xl font-medium mb-4"
-                style={{ color: "var(--apex-gray-dark)" }}
-              >
-                Still have questions ?
+              <p className="text-base font-semibold mb-2 text-slate-900 text-center">
+                Still have questions?
               </p>
-              <p
-                className="text-sm mb-4 text-center"
-                style={{ color: "var(--apex-gray-medium)" }}
-              >
+              <p className="text-sm mb-4 text-center text-slate-500">
                 If the question is not available on our FAQ section. Feel free
                 to contact us personally.
               </p>
               <button
-                className="text-white border-4 border-red-200 font-semibold px-8 py-3 rounded-full w-full transition-opacity hover:opacity-90 mb-4 flex items-center justify-center gap-2"
-                style={{ backgroundColor: "var(--apex-primary)" }}
+                className="text-white font-semibold px-8 py-3 rounded-full w-full transition-opacity hover:opacity-90 mb-4 flex items-center justify-center gap-2 shadow-md"
+                style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}
               >
-                <Rocket />
+                <Rocket className="w-4 h-4" />
                 Ask Question
               </button>
             </div>
@@ -230,7 +217,7 @@ export default function FAQ() {
 
           {/* Right Side */}
           <div className="md:max-w-2/3 w-full flex flex-col mx-auto justify-center">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-8 py-4 px-4 md:bg-white rounded-3xl">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-8 py-4 px-4 md:bg-slate-50 rounded-3xl">
               {tabs.map((tab) => (
                 <button
                   key={tab}
@@ -239,16 +226,16 @@ export default function FAQ() {
                   style={{
                     backgroundColor:
                       activeCategory === tab
-                        ? "var(--apex-primary)"
+                        ? "var(--tigat-primary)"
                         : "transparent",
                     color:
                       activeCategory === tab
                         ? "white"
-                        : "var(--apex-gray-medium)",
+                        : "var(--tigat-gray-medium)",
                     border:
                       activeCategory === tab
                         ? "none"
-                        : `1px solid var(--apex-gray-light)`,
+                        : `1px solid var(--tigat-gray-light)`,
                   }}
                 >
                   {tab}
@@ -260,34 +247,34 @@ export default function FAQ() {
               {filteredFAQs.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg overflow-hidden"
+                  className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm"
                 >
                   <button
                     onClick={() =>
                       setExpandedFAQ(expandedFAQ === index ? null : index)
                     }
-                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors"
                   >
                     <span
-                      className="font-medium text-left"
-                      style={{ color: "var(--apex-gray-dark)" }}
+                      className="font-medium text-left text-slate-900"
                     >
                       {faq.question}
                     </span>
                     <div
                       className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-transform"
-                      style={{ backgroundColor: "var(--apex-primary)" }}
+                      style={{ backgroundColor: "rgba(1,135,186,0.1)" }}
                     >
                       <ChevronDown
-                        className={`w-4 h-4 text-white transition-transform ${
+                        className={`w-4 h-4 transition-transform ${
                           expandedFAQ === index ? "rotate-180" : ""
                         }`}
+                        style={{ color: "var(--tigat-primary)" }}
                       />
                     </div>
                   </button>
                   {expandedFAQ === index && (
-                    <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                      <p style={{ color: "var(--apex-gray-medium)" }}>
+                    <div className="px-6 py-4 bg-slate-50 border-t border-slate-100">
+                      <p className="text-sm leading-relaxed text-slate-500">
                         {faq.answer}
                       </p>
                     </div>
