@@ -63,7 +63,7 @@ const CareersHero = () => {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                    className="text-slate-900 mb-6"
                     >
                         Join Our Team: Ignite Your Career
                     </motion.h1>
@@ -71,7 +71,7 @@ const CareersHero = () => {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-gray-500 text-lg leading-relaxed"
+                        className="text-slate-500 leading-relaxed"
                     >
                         Discover the reasons why working at Tigat Tech is more than a job—it's an opportunity to be part of a dynamic team, unleash your potential, and contribute to shaping the future of digital innovation.
                     </motion.p>
@@ -86,14 +86,14 @@ const CareersHero = () => {
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center group"
+                            className="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center group"
                         >
                             <div className="w-20 h-20 rounded-full flex items-center justify-center shadow-lg mb-8 relative group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: "var(--tigat-primary)", boxShadow: "0 4px 14px rgba(1,135,186,0.3)" }}>
                                 <feature.icon className="text-white w-9 h-9" />
                                 <div className="absolute inset-0 blur-xl opacity-30 rounded-full -z-10" style={{ backgroundColor: "var(--tigat-primary)" }}></div>
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                            <p className="text-gray-500 leading-relaxed text-sm px-4">
+                            <h3 className="text-slate-900 mb-4">{feature.title}</h3>
+                            <p className="text-slate-500 leading-relaxed text-sm px-4">
                                 {feature.description}
                             </p>
                         </motion.div>

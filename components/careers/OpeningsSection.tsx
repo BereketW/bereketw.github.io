@@ -28,7 +28,7 @@ const OpeningsSection = () => {
     ];
 
     return (
-        <section className="bg-white py-20">
+        <section className="bg-slate-50 py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
@@ -44,10 +44,10 @@ const OpeningsSection = () => {
                         <div className="absolute inset-0 blur-xl opacity-20 rounded-full" style={{ backgroundColor: "var(--tigat-primary)" }}></div>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+                    <h2 className="text-slate-900 mb-6 tracking-tight">
                         Discover Thrilling Opportunities
                     </h2>
-                    <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-slate-500 max-w-3xl mx-auto leading-relaxed">
                         Dive into our current job openings and embark on a journey to join a team that values innovation, collaboration, and individual growth in the ever-evolving landscape of digital excellence.
                     </p>
                 </motion.div>
@@ -61,7 +61,7 @@ const OpeningsSection = () => {
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-start text-left h-full"
+                            className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-start text-left h-full"
                         >
                             <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg mb-6 relative group-hover:scale-110 transition-transform duration-300 shrink-0" style={{ backgroundColor: "var(--tigat-primary)", boxShadow: "0 4px 14px rgba(1,135,186,0.3)" }}>
                                 <job.icon className="text-white w-8 h-8" />
@@ -69,15 +69,15 @@ const OpeningsSection = () => {
                             </div>
 
                             <div className="mb-4">
-                                <h3 className="text-xl font-bold text-gray-900 mb-1">{job.title}</h3>
-                                <span className="text-sm text-gray-500 font-medium">{job.location}</span>
+                                <h3 className="text-slate-900 mb-1">{job.title}</h3>
+                                <span className="text-xs text-slate-500 font-medium uppercase tracking-wide">{job.location}</span>
                             </div>
 
                             <p className="text-gray-500 leading-relaxed text-sm mb-8 flex-grow">
                                 {job.description}
                             </p>
 
-                            <button className="inline-flex items-center text-gray-900 font-bold text-sm transition-colors group/btn">
+                            <button className="inline-flex items-center text-gray-900 font-semibold text-sm transition-colors group/btn">
                                 Apply Now
                                 <div className="ml-2 w-6 h-6 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: "rgba(1,135,186,0.1)" }}>
                                     <ArrowRight className="w-3 h-3 transition-colors" style={{ color: "var(--tigat-primary)" }} />
@@ -95,7 +95,7 @@ const OpeningsSection = () => {
                     viewport={{ once: true }}
                     className="text-center"
                 >
-                    <Button className="text-white px-8 py-6 rounded-full font-bold shadow-lg transition-all transform hover:scale-105 hover:opacity-90 flex items-center gap-2 mx-auto" style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}>
+                    <Button className="text-white px-8 py-6 rounded-full font-semibold shadow-lg transition-all transform hover:scale-105 hover:opacity-90 flex items-center gap-2 mx-auto" style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}>
                         <ShoppingBag className="w-5 h-5" />
                         View all Openings
                     </Button>
