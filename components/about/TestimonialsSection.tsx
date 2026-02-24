@@ -49,18 +49,18 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
       </div>
 
       {/* Testimonial Content */}
-      <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+      <p className="text-slate-600 mb-6">
         &quot;{content}&quot;
       </p>
 
       {/* Author */}
       <div className="flex items-center">
-        <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4" style={{ background: "linear-gradient(to bottom right, var(--tigat-primary), var(--tigat-primary-light))" }}>
+        <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-semibold mr-4" style={{ background: "linear-gradient(to bottom right, var(--tigat-primary), var(--tigat-primary-light))" }}>
           {name.split(' ').map(n => n[0]).join('')}
         </div>
         <div>
-          <h4 className="font-bold text-gray-900">{name}</h4>
-          <p className="text-sm text-gray-600">{role} at {company}</p>
+          <h4 className="font-semibold text-slate-900">{name}</h4>
+          <p className="text-xs text-slate-500">{role} at {company}</p>
         </div>
       </div>
     </motion.div>
@@ -93,7 +93,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -103,10 +103,10 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-slate-900 mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-slate-500 max-w-3xl mx-auto">
             Discover transformational we&apos;ve achieved with our esteemed clients and hear their stories of success, collaboration, and the transformative impact we&apos;ve had together.
           </p>
         </motion.div>
@@ -136,15 +136,15 @@ const TestimonialsSection = () => {
         >
           <div>
             <div className="text-3xl font-bold mb-2" style={{ color: "var(--tigat-primary)" }}>98%</div>
-            <p className="text-gray-600">Client Satisfaction</p>
+            <p className="text-slate-500">Client Satisfaction</p>
           </div>
           <div>
             <div className="text-3xl font-bold mb-2" style={{ color: "var(--tigat-primary)" }}>4.9/5</div>
-            <p className="text-gray-600">Average Rating</p>
+            <p className="text-slate-500">Average Rating</p>
           </div>
           <div>
             <div className="text-3xl font-bold mb-2" style={{ color: "var(--tigat-primary)" }}>150+</div>
-            <p className="text-gray-600">Success Stories</p>
+            <p className="text-slate-500">Success Stories</p>
           </div>
         </motion.div>
       </div>

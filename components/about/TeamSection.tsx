@@ -21,12 +21,12 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, handle, image, inde
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group"
+      className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 group"
     >
       <div className="flex items-center space-x-4 mb-6">
         {/* Avatar */}
         <div className="relative w-16 h-16 shrink-0">
-          <div className="w-full h-full rounded-full overflow-hidden bg-gray-100 relative z-10 border-2 border-white shadow-md">
+          <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 relative z-10 border-2 border-white shadow-md">
             {/* Fallback to initials if image fails or just use a colored div for now as placeholder */}
             <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center font-bold text-xl" style={{ color: "var(--tigat-primary)" }}>
               {name.split(' ').map(n => n[0]).join('')}
@@ -38,8 +38,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, handle, image, inde
 
         {/* Info */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-gray-900 font-bold text-lg truncate">{name}</h3>
-          <p className="text-gray-500 text-sm truncate">{role}</p>
+          <h3 className="text-slate-900 font-semibold truncate">{name}</h3>
+          <p className="text-slate-500 text-xs truncate">{role}</p>
         </div>
       </div>
 
@@ -49,7 +49,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, handle, image, inde
           href={`https://twitter.com/${handle.replace('@', '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center space-x-2 text-gray-600 px-6 py-2 rounded-full transition-colors duration-200 text-sm font-medium w-full justify-center group/btn" style={{ backgroundColor: "rgba(1,135,186,0.08)" }}
+          className="inline-flex items-center space-x-2 text-slate-600 px-6 py-2 rounded-full transition-colors duration-200 text-xs font-medium w-full justify-center group/btn" style={{ backgroundColor: "rgba(1,135,186,0.08)" }}
         >
           <Twitter className="w-4 h-4 transition-colors" style={{ color: "var(--tigat-primary)" }} />
           <span>{handle}</span>
@@ -112,7 +112,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50/30">
+    <section className="py-20 md:py-32 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -128,10 +128,10 @@ const TeamSection = () => {
             <div className="absolute inset-0 blur-xl opacity-20 rounded-full" style={{ backgroundColor: "var(--tigat-primary)" }}></div>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-slate-900 mb-6 tracking-tight">
             Meet the Visionaries Behind Tigat Tech
           </h2>
-          <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-500 max-w-3xl mx-auto leading-relaxed">
             Each team member contributes a unique blend of expertise and creativity, working collaboratively to turn ideas into reality. Get to know the faces driving innovation and excellence within our dedicated team.
           </p>
         </motion.div>
@@ -158,7 +158,7 @@ const TeamSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button className="text-white px-10 py-6 rounded-full font-bold shadow-lg transition-all transform hover:scale-105 hover:opacity-90 flex items-center gap-2 mx-auto" style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}>
+          <Button className="text-white px-10 py-6 rounded-full font-semibold shadow-lg transition-all transform hover:scale-105 hover:opacity-90 flex items-center gap-2 mx-auto" style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}>
             <Star className="w-5 h-5 fill-current" />
             Join Our Team
           </Button>

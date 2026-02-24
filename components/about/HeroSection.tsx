@@ -83,12 +83,12 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, delay }) => {
       initial={{ y: 20, opacity: 0 }}
       animate={isInView ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.5, delay: delay * 0.1 }}
-      className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+      className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300"
     >
-      <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+      <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "var(--tigat-primary)" }}>
         {displayValue}
       </div>
-      <div className="text-sm text-gray-500 font-medium text-center">
+      <div className="text-xs text-slate-500 font-medium text-center uppercase tracking-widest">
         {label}
       </div>
     </motion.div>
@@ -106,7 +106,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 overflow-hidden bg-white rounded-3xl border border-gray-100 shadow-sm my-8">
+    <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 overflow-hidden bg-white rounded-3xl border border-slate-100 shadow-sm my-8">
 
       {/* Background Grid of Icons */}
       <div className="absolute inset-0 opacity-100 pointer-events-none overflow-hidden">
@@ -114,7 +114,7 @@ const HeroSection = () => {
           {Array.from({ length: 40 }).map((_, i) => {
             const Icon = iconList[i % iconList.length];
             return (
-              <div key={i} className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+              <div key={i} className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
                 <Icon className="w-8 h-8 md:w-10 md:h-10 opacity-80" style={{ color: "var(--tigat-primary-light)" }} />
               </div>
             );
@@ -152,7 +152,7 @@ const HeroSection = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-6 max-w-4xl"
+          className="text-slate-900 tracking-tight mb-6 max-w-4xl"
         >
           Unveiling Our Story: The Essence of Tigat Tech
         </motion.h1>
@@ -162,7 +162,7 @@ const HeroSection = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto mb-16 leading-relaxed"
+          className="text-slate-500 max-w-3xl mx-auto mb-16"
         >
           Embark on a narrative of our journey, where passion, innovation, and dedication converge to shape the story of our growth and commitment to excellence.
         </motion.p>

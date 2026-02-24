@@ -55,7 +55,7 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, delay }) => {
       <div className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2" style={{ color: "var(--tigat-primary)" }}>
         {displayValue}
       </div>
-      <div className="text-sm md:text-base text-gray-600 uppercase tracking-wide font-medium">
+      <div className="text-xs text-slate-500 uppercase tracking-widest font-medium">
         {label}
       </div>
     </motion.div>
@@ -72,7 +72,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -81,10 +81,10 @@ const StatsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-slate-900 mb-4">
             Our Impact in Numbers
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-slate-500 max-w-2xl mx-auto">
             These numbers represent our commitment to excellence and the trust our clients place in us.
           </p>
         </motion.div>

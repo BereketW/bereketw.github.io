@@ -35,7 +35,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -45,10 +45,10 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-slate-900 mb-4">
             Common Queries, Clear Answers
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-slate-500 max-w-2xl mx-auto">
             We believe in transparency and want to provide clear answers to the questions we&apos;re asked most frequently.
           </p>
         </motion.div>
@@ -66,9 +66,9 @@ const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200"
+                className="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-200"
               >
-                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 transition-colors duration-200">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-slate-900 transition-colors duration-200">
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4 shrink-0" style={{ backgroundColor: "rgba(1,135,186,0.1)" }}>
                       <span className="font-bold text-sm" style={{ color: "var(--tigat-primary)" }}>{index + 1}</span>
@@ -78,7 +78,7 @@ const FAQSection = () => {
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4">
                   <div className="pl-12">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    <p className="text-slate-500 leading-relaxed">{faq.answer}</p>
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -92,19 +92,19 @@ const FAQSection = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center bg-white rounded-lg shadow-lg p-8"
+          className="text-center bg-white rounded-2xl border border-slate-100 shadow-sm p-8"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-slate-900 mb-4">
             Still Have Questions?
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-slate-500 mb-6">
             If you couldn&apos;t find the answer you were looking for, don&apos;t hesitate to reach out to our team. We&apos;re here to help!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="text-white px-8 py-3 rounded-full font-medium" style={{ backgroundColor: "var(--tigat-accent)" }}>
+            <Button className="text-white px-8 py-3 rounded-full font-semibold" style={{ backgroundColor: "var(--tigat-accent)" }}>
               Ask a Question
             </Button>
-            <Button variant="outline" className="px-8 py-3 rounded-full font-medium" style={{ borderColor: "var(--tigat-primary)", color: "var(--tigat-primary)" }}>
+            <Button variant="outline" className="px-8 py-3 rounded-full font-semibold" style={{ borderColor: "var(--tigat-primary)", color: "var(--tigat-primary)" }}>
               Contact Support
             </Button>
           </div>
