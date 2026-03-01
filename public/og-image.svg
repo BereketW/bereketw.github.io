@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0ea5a4"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <style>
+      .bg { fill: url(#g); }
+      .title { font-family: Inter, Poppins, Arial, sans-serif; font-weight: 700; font-size: 56px; fill: #ffffff }
+      .tag { font-family: Inter, Poppins, Arial, sans-serif; font-weight: 500; font-size: 24px; fill: rgba(255,255,255,0.9) }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630" rx="24"/>
+  <g transform="translate(80,110)">
+    <image href="/logo.png" width="160" height="160" />
+    <text class="title" x="200" y="70">Tigat Tech</text>
+    <text class="tag" x="200" y="110">Elevate your digital presence — design & engineering</text>
+  </g>
+</svg>
