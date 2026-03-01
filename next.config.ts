@@ -2,8 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath:'/bereketw.github.io',
-  assetPrefix: '/bereketw.github.io',
+  
   
 
   
