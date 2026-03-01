@@ -2,7 +2,6 @@
 
 import { ArrowRight } from "lucide-react";
 import ProjectsCarousel from "./project-carousel";
-import ClientsShowcase from "../client-showcase";
 
 export default function ServicesHero() {
   return (
