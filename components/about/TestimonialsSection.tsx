@@ -67,30 +67,43 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
   );
 };
 
-const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Alan Anderson",
-      role: "CEO",
-      company: "TechCorp",
-      content: "Working with Tigat Tech was a transformative experience for our company. Their innovative approach and dedication to excellence delivered results beyond our expectations. The team's expertise in digital transformation helped us achieve remarkable growth.",
-      rating: 5
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Marketing Director", 
-      company: "StartupHub",
-      content: "Tigat Tech delivered exactly what we needed with incredible precision. Their comprehensive approach to project management and technical implementation was impressive. They transformed our vision into a powerful, user-friendly platform.",
-      rating: 5
-    },
-    {
-      name: "Emily Foster",
-      role: "Product Manager",
-      company: "InnovateLab",
-      content: "The professionalism and expertise demonstrated by the Tigat Tech team were outstanding. From initial consultation to final delivery, every aspect of their service exceeded our expectations. They truly understand modern business needs.",
-      rating: 5
-    }
-  ];
+type Testimonial = {
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  rating: number;
+};
+
+const TestimonialsSection = ({ testimonials }: { testimonials: Testimonial[] }) => {
+  const resolvedTestimonials = testimonials.length
+    ? testimonials
+    : [
+        {
+          name: "Alan Anderson",
+          role: "CEO",
+          company: "TechCorp",
+          content:
+            "Working with Tigat Tech was a transformative experience for our company. Their innovative approach and dedication to excellence delivered results beyond our expectations. The team's expertise in digital transformation helped us achieve remarkable growth.",
+          rating: 5,
+        },
+        {
+          name: "Sarah Johnson",
+          role: "Marketing Director",
+          company: "StartupHub",
+          content:
+            "Tigat Tech delivered exactly what we needed with incredible precision. Their comprehensive approach to project management and technical implementation was impressive. They transformed our vision into a powerful, user-friendly platform.",
+          rating: 5,
+        },
+        {
+          name: "Emily Foster",
+          role: "Product Manager",
+          company: "InnovateLab",
+          content:
+            "The professionalism and expertise demonstrated by the Tigat Tech team were outstanding. From initial consultation to final delivery, every aspect of their service exceeded our expectations. They truly understand modern business needs.",
+          rating: 5,
+        },
+      ];
 
   return (
     <section className="py-20 bg-slate-50">
@@ -113,7 +126,7 @@ const TestimonialsSection = () => {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
+          {resolvedTestimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}
               name={testimonial.name}
