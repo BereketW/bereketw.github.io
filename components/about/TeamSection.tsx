@@ -10,11 +10,15 @@ interface TeamMemberProps {
   name: string;
   role: string;
   handle: string;
-  image: string;
+  image?: string;
   index: number;
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, role, handle, image, index }) => {
+  const profileUrl = handle.startsWith("http")
+    ? handle
+    : `https://twitter.com/${handle.replace("@", "")}`;
+  const displayHandle = handle.startsWith("http") ? "Connect" : handle;
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
@@ -28,7 +32,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, handle, image, inde
         <div className="relative w-16 h-16 shrink-0">
           <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 relative z-10 border-2 border-white shadow-md">
             {/* Fallback to initials if image fails or just use a colored div for now as placeholder */}
-            <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center font-bold text-xl" style={{ color: "var(--tigat-primary)" }}>
+            <div className="w-full h-full bg-linear-to-br from-blue-50 to-blue-100 flex items-center justify-center font-bold text-xl" style={{ color: "var(--tigat-primary)" }}>
               {name.split(' ').map(n => n[0]).join('')}
             </div>
             {/* In a real app, we would use Next.js Image here */}
@@ -46,70 +50,79 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, handle, image, inde
       {/* Social Pill */}
       <div className="flex justify-center">
         <a
-          href={`https://twitter.com/${handle.replace('@', '')}`}
+          href={profileUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center space-x-2 text-slate-600 px-6 py-2 rounded-full transition-colors duration-200 text-xs font-medium w-full justify-center group/btn" style={{ backgroundColor: "rgba(1,135,186,0.08)" }}
         >
           <Twitter className="w-4 h-4 transition-colors" style={{ color: "var(--tigat-primary)" }} />
-          <span>{handle}</span>
+          <span>{displayHandle}</span>
         </a>
       </div>
     </motion.div>
   );
 };
 
-const TeamSection = () => {
-  const teamMembers = [
-    {
-      name: "Alexandra Turner",
-      role: "CEO",
-      handle: "@alexandraturner",
-      image: "/team/alexandra.jpg"
-    },
-    {
-      name: "Daniel Rodriguez",
-      role: "CTO",
-      handle: "@danielrodriguez",
-      image: "/team/daniel.jpg"
-    },
-    {
-      name: "Olivia Chang",
-      role: "Creative Director",
-      handle: "@oliviachang",
-      image: "/team/olivia.jpg"
-    },
-    {
-      name: "Michael Patel",
-      role: "Lead Software Engineer",
-      handle: "@michaelpatel",
-      image: "/team/michael.jpg"
-    },
-    {
-      name: "Sophie Carter",
-      role: "UX/UI Designer",
-      handle: "@sophiecarter",
-      image: "/team/sophie.jpg"
-    },
-    {
-      name: "Anthony Davis",
-      role: "Project Manager",
-      handle: "@anthonydavis",
-      image: "/team/anthony.jpg"
-    },
-    {
-      name: "Emily Thompson",
-      role: "Marketing Specialist",
-      handle: "@emilythompson",
-      image: "/team/emily.jpg"
-    },
-    {
-      name: "Ryan Foster",
-      role: "Financial Analyst",
-      handle: "@ryanfoster",
-      image: "/team/ryan.jpg"
-    }
-  ];
+type TeamMember = {
+  name: string;
+  role: string;
+  handle: string;
+  image?: string;
+};
+
+const TeamSection = ({ teamMembers }: { teamMembers: TeamMember[] }) => {
+  const resolvedMembers = teamMembers.length
+    ? teamMembers
+    : [
+        {
+          name: "Alexandra Turner",
+          role: "CEO",
+          handle: "@alexandraturner",
+          image: "/team/alexandra.jpg",
+        },
+        {
+          name: "Daniel Rodriguez",
+          role: "CTO",
+          handle: "@danielrodriguez",
+          image: "/team/daniel.jpg",
+        },
+        {
+          name: "Olivia Chang",
+          role: "Creative Director",
+          handle: "@oliviachang",
+          image: "/team/olivia.jpg",
+        },
+        {
+          name: "Michael Patel",
+          role: "Lead Software Engineer",
+          handle: "@michaelpatel",
+          image: "/team/michael.jpg",
+        },
+        {
+          name: "Sophie Carter",
+          role: "UX/UI Designer",
+          handle: "@sophiecarter",
+          image: "/team/sophie.jpg",
+        },
+        {
+          name: "Anthony Davis",
+          role: "Project Manager",
+          handle: "@anthonydavis",
+          image: "/team/anthony.jpg",
+        },
+        {
+          name: "Emily Thompson",
+          role: "Marketing Specialist",
+          handle: "@emilythompson",
+          image: "/team/emily.jpg",
+        },
+        {
+          name: "Ryan Foster",
+          role: "Financial Analyst",
+          handle: "@ryanfoster",
+          image: "/team/ryan.jpg",
+        },
+      ];
 
   return (
     <section className="py-20 md:py-32 bg-slate-50">
@@ -138,7 +151,7 @@ const TeamSection = () => {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {teamMembers.map((member, index) => (
+          {resolvedMembers.map((member, index) => (
             <TeamMember
               key={index}
               name={member.name}
