@@ -1,30 +1,44 @@
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
 
-export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "John Anderson",
-      role: "Entrepreneur",
-      image: "/professional-man.png",
-      rating: 5,
-      text: "Tigat Tech has been instrumental in transforming our online presence. Their team's expertise in web development and design delivered a stunning and user-friendly e-commerce platform.",
-    },
-    {
-      name: "Sarah Johnson",
-      role: "CEO Boutique",
-      image: "/professional-woman.png",
-      rating: 5,
-      text: "Working with Tigat Tech was a breeze. They understood our vision for a mobile app that streamlined our operations. The result exceeded our expectations.",
-    },
-    {
-      name: "Emily Turner",
-      role: "Founder EventMasters",
-      image: "/professional-woman-2.png",
-      rating: 5,
-      text: "Tigat Tech developed a comprehensive booking and reservation system for our event management platform. Their attention to detail and commitment to excellence was evident throughout the project.",
-    },
-  ];
+type TestimonialItem = {
+  name: string;
+  role: string;
+  image?: string;
+  rating: number;
+  text: string;
+};
+
+export default function Testimonials({
+  testimonials = [],
+}: {
+  testimonials?: TestimonialItem[];
+}) {
+  const resolvedTestimonials = testimonials.length
+    ? testimonials
+    : [
+        {
+          name: "John Anderson",
+          role: "Entrepreneur",
+          image: "/professional-man.png",
+          rating: 5,
+          text: "Tigat Tech has been instrumental in transforming our online presence. Their team's expertise in web development and design delivered a stunning and user-friendly e-commerce platform.",
+        },
+        {
+          name: "Sarah Johnson",
+          role: "CEO Boutique",
+          image: "/professional-woman.png",
+          rating: 5,
+          text: "Working with Tigat Tech was a breeze. They understood our vision for a mobile app that streamlined our operations. The result exceeded our expectations.",
+        },
+        {
+          name: "Emily Turner",
+          role: "Founder EventMasters",
+          image: "/professional-woman-2.png",
+          rating: 5,
+          text: "Tigat Tech developed a comprehensive booking and reservation system for our event management platform. Their attention to detail and commitment to excellence was evident throughout the project.",
+        },
+      ];
 
   return (
     <section className="py-16 md:py-24 bg-slate-50">
@@ -47,7 +61,7 @@ export default function Testimonials() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {resolvedTestimonials.map((testimonial, index) => (
             <Card key={index} className="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex justify-between">
                 <div className="flex items-center gap-4 mb-4">
