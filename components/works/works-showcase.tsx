@@ -3,15 +3,15 @@
 import { useState } from "react";
 
 interface Project {
-  id: number;
+  id?: string | number;
   title: string;
-  category: string;
-  type: string;
-  image: string;
-  tags: string[];
+  category?: string;
+  type?: string;
+  image?: string;
+  tags?: string[];
 }
 
-export default function WorksShowcase() {
+export default function WorksShowcase({ projects }: { projects: Project[] }) {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filters = [
@@ -23,63 +23,65 @@ export default function WorksShowcase() {
     "App Design",
   ];
 
-  const projects: Project[] = [
-    // Web Design Projects
-    {
-      id: 1,
-      title: "For Help Charity",
-      category: "Blog",
-      type: "Web Design",
-      image: "/charity-website-design.jpg",
-      tags: ["Web Design"],
-    },
-    {
-      id: 2,
-      title: "Zenith Gym Website",
-      category: "Fitness",
-      type: "Web Design",
-      image: "/gym-fitness-website.jpg",
-      tags: ["Web Design"],
-    },
-    {
-      id: 3,
-      title: "Klothes E-commerce",
-      category: "E-commerce",
-      type: "Web Design",
-      image: "/ecommerce-clothing-store.jpg",
-      tags: ["Web Design"],
-    },
-    // Web Development Projects
-    {
-      id: 4,
-      title: "Talent Blog",
-      category: "Blog",
-      type: "Web Development",
-      image: "/blog-platform-development.jpg",
-      tags: ["Web Development"],
-    },
-    {
-      id: 5,
-      title: "SkillBridge E-Tech",
-      category: "Education",
-      type: "Web Development",
-      image: "/education-platform-elearning.jpg",
-      tags: ["Web Development"],
-    },
-    {
-      id: 6,
-      title: "Z-Aura E-commerce",
-      category: "E-commerce",
-      type: "Web Development",
-      image: "/ecommerce-platform-development.png",
-      tags: ["Web Development"],
-    },
-  ];
+  const resolvedProjects: Project[] = projects.length
+    ? projects
+    : [
+        // Web Design Projects
+        {
+          id: 1,
+          title: "For Help Charity",
+          category: "Blog",
+          type: "Web Design",
+          image: "/charity-website-design.jpg",
+          tags: ["Web Design"],
+        },
+        {
+          id: 2,
+          title: "Zenith Gym Website",
+          category: "Fitness",
+          type: "Web Design",
+          image: "/gym-fitness-website.jpg",
+          tags: ["Web Design"],
+        },
+        {
+          id: 3,
+          title: "Klothes E-commerce",
+          category: "E-commerce",
+          type: "Web Design",
+          image: "/ecommerce-clothing-store.jpg",
+          tags: ["Web Design"],
+        },
+        // Web Development Projects
+        {
+          id: 4,
+          title: "Talent Blog",
+          category: "Blog",
+          type: "Web Development",
+          image: "/blog-platform-development.jpg",
+          tags: ["Web Development"],
+        },
+        {
+          id: 5,
+          title: "SkillBridge E-Tech",
+          category: "Education",
+          type: "Web Development",
+          image: "/education-platform-elearning.jpg",
+          tags: ["Web Development"],
+        },
+        {
+          id: 6,
+          title: "Z-Aura E-commerce",
+          category: "E-commerce",
+          type: "Web Development",
+          image: "/ecommerce-platform-development.png",
+          tags: ["Web Development"],
+        },
+      ];
 
   const filteredProjects =
     activeFilter === "All"
-      ? projects
-      : projects.filter((p) => p.tags.includes(activeFilter));
+      ? resolvedProjects
+      : resolvedProjects.filter((p) => p.tags?.includes(activeFilter));
 
   return (
     <section className="py-16 md:py-24 ">
@@ -102,7 +104,7 @@ export default function WorksShowcase() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {projects
+            {resolvedProjects
               .filter((p) => p.type === "Web Design")
               .map((project) => (
                 <ProjectCard key={project.id} project={project} />
@@ -128,7 +130,7 @@ export default function WorksShowcase() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {projects
+            {resolvedProjects
               .filter((p) => p.type === "Web Development")
               .map((project) => (
                 <ProjectCard key={project.id} project={project} />
@@ -161,7 +163,7 @@ function ProjectCard({ project }: { project: Project }) {
           className="text-sm mb-4"
           style={{ color: "var(--apex-gray-medium)" }}
         >
-          {project.category} • {project.type}
+          {project.category || "Project"} • {project.type || "Case Study"}
         </p>
         <div className="flex justify-between items-center">
           <span
