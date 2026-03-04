@@ -5,27 +5,46 @@ import { motion } from 'framer-motion';
 import { Briefcase, Pipette, Code2, LayoutGrid, ArrowRight, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const OpeningsSection = () => {
-    const openings = [
-        {
-            icon: Pipette,
-            title: "UX/UI Designer",
-            location: "India",
-            description: "If you have a keen eye for aesthetics, a deep understanding of user experience, and a passion for creating intuitive interfaces, we would love to hear from you."
-        },
-        {
-            icon: Code2,
-            title: "Full Stack Developer",
-            location: "India",
-            description: "If you're a coding wizard with expertise in front-end and back-end development, and have experience with frameworks like React, Angular, or Node.js,."
-        },
-        {
-            icon: LayoutGrid,
-            title: "Project Manager",
-            location: "India",
-            description: "If you excel at coordinating teams, managing timelines, and ensuring successful project delivery, we invite you to join our project management team."
-        }
-    ];
+type OpeningItem = {
+    title: string;
+    description: string;
+    location?: string;
+    icon?: string;
+};
+
+const iconMap = {
+    Briefcase,
+    Pipette,
+    Code2,
+    LayoutGrid,
+} as const;
+
+const OpeningsSection = ({ openings }: { openings: OpeningItem[] }) => {
+    const resolvedOpenings = openings.length
+        ? openings
+        : [
+              {
+                  icon: "Pipette",
+                  title: "UX/UI Designer",
+                  location: "Remote",
+                  description:
+                      "If you have a keen eye for aesthetics, a deep understanding of user experience, and a passion for creating intuitive interfaces, we would love to hear from you.",
+              },
+              {
+                  icon: "Code2",
+                  title: "Full Stack Developer",
+                  location: "Remote",
+                  description:
+                      "If you're a coding wizard with expertise in front-end and back-end development, and have experience with frameworks like React, Angular, or Node.js,.",
+              },
+              {
+                  icon: "LayoutGrid",
+                  title: "Project Manager",
+                  location: "Remote",
+                  description:
+                      "If you excel at coordinating teams, managing timelines, and ensuring successful project delivery, we invite you to join our project management team.",
+              },
+          ];
 
     return (
         <section className="bg-slate-50 py-20">
@@ -54,7 +73,9 @@ const OpeningsSection = () => {
 
                 {/* Job Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                    {openings.map((job, index) => (
+                    {resolvedOpenings.map((job, index) => {
+                        const Icon = iconMap[job.icon as keyof typeof iconMap] || Briefcase;
+                        return (
                         <motion.div
                             key={index}
                             initial={{ y: 30, opacity: 0 }}
@@ -64,16 +85,16 @@ const OpeningsSection = () => {
                             className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-start text-left h-full"
                         >
                             <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg mb-6 relative group-hover:scale-110 transition-transform duration-300 shrink-0" style={{ backgroundColor: "var(--tigat-primary)", boxShadow: "0 4px 14px rgba(1,135,186,0.3)" }}>
-                                <job.icon className="text-white w-8 h-8" />
+                                <Icon className="text-white w-8 h-8" />
                                 <div className="absolute inset-0 blur-xl opacity-30 rounded-full -z-10" style={{ backgroundColor: "var(--tigat-primary)" }}></div>
                             </div>
 
                             <div className="mb-4">
                                 <h3 className="text-slate-900 mb-1">{job.title}</h3>
-                                <span className="text-xs text-slate-500 font-medium uppercase tracking-wide">{job.location}</span>
+                                <span className="text-xs text-slate-500 font-medium uppercase tracking-wide">{job.location || "Remote"}</span>
                             </div>
 
-                            <p className="text-gray-500 leading-relaxed text-sm mb-8 flex-grow">
+                            <p className="text-gray-500 leading-relaxed text-sm mb-8 grow">
                                 {job.description}
                             </p>
 
@@ -84,7 +105,8 @@ const OpeningsSection = () => {
                                 </div>
                             </button>
                         </motion.div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {/* View All Openings Button */}
