@@ -4,9 +4,18 @@ import EngineeringServices from "@/components/service/engineering-services";
 import ProjectManagementServices from "@/components/service/project-management-services";
 import FAQ from "@/components/common/faq";
 import Testimonials from "@/components/common/testimonials";
-import Footer from "@/components/common/footer";
+import { getTestimonials } from "@/lib/tigat-api";
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const testimonials = await getTestimonials();
+  const testimonialCards = testimonials.slice(0, 3).map((testimonial) => ({
+    name: testimonial.name,
+    role: testimonial.role,
+    image: testimonial.avatarUrl || "/professional-man.png",
+    rating: testimonial.rating || 5,
+    text: testimonial.review || "",
+  }));
+
   return (
     <div>
       <ServicesHero />
@@ -14,7 +23,7 @@ export default function ServicesPage() {
       <EngineeringServices />
       <ProjectManagementServices />
       <FAQ />
-      <Testimonials />
+      <Testimonials testimonials={testimonialCards} />
     </div>
   );
 }
