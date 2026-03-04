@@ -3,27 +3,40 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-export default function PortfolioShowcase() {
-  const projects = [
-    {
-      title: "For Help Charity",
-      category: "Blog",
-      subcategory: "Web Design",
-      image: "/design-project-showcase.jpg",
-    },
-    {
-      title: "Zenith Gym Website",
-      category: "Fitness",
-      subcategory: "Web Design",
-      image: "/development-project-showcase.jpg",
-    },
-    {
-      title: "Klothes E-commerce",
-      category: "E-commerce",
-      subcategory: "Web Design",
-      image: "/branding-project-showcase.jpg",
-    },
-  ];
+type PortfolioProject = {
+  title: string;
+  category?: string;
+  subcategory?: string;
+  image?: string;
+};
+
+export default function PortfolioShowcase({
+  projects,
+}: {
+  projects: PortfolioProject[];
+}) {
+  const resolvedProjects = projects.length
+    ? projects
+    : [
+        {
+          title: "For Help Charity",
+          category: "Blog",
+          subcategory: "Web Design",
+          image: "/design-project-showcase.jpg",
+        },
+        {
+          title: "Zenith Gym Website",
+          category: "Fitness",
+          subcategory: "Web Design",
+          image: "/development-project-showcase.jpg",
+        },
+        {
+          title: "Klothes E-commerce",
+          category: "E-commerce",
+          subcategory: "Web Design",
+          image: "/branding-project-showcase.jpg",
+        },
+      ];
 
   return (
     <section className="py-20 md:py-32 bg-slate-50">
@@ -46,7 +59,7 @@ export default function PortfolioShowcase() {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {projects.map((project, index) => (
+          {resolvedProjects.map((project, index) => (
             <div
               key={index}
               className="bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
@@ -67,7 +80,7 @@ export default function PortfolioShowcase() {
                   {project.title}
                 </h3>
                 <p className="text-xs text-slate-500 uppercase tracking-wide font-medium">
-                  {project.category} · {project.subcategory}
+                  {project.category || "Project"} · {project.subcategory || "Case Study"}
                 </p>
               </div>
             </div>
