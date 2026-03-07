@@ -16,12 +16,7 @@ export default function WhyChooseUs() {
       description:
         "We prioritize efficiency without compromising on quality to meet your deadlines.",
     },
-    {
-      icon: Award,
-      title: "Award Winning",
-      description:
-        "Our work has been recognized and awarded by industry leaders and organizations.",
-    },
+   
     {
       icon: Target,
       title: "Customer Focus",
@@ -51,7 +46,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="flex items-center justify-center max-sm:flex-wrap gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
