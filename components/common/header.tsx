@@ -16,9 +16,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src="/t.png"
               alt="Tigat Tech"
-              width={150}
+              width={80}
               height={36}
               className=" object-contain"
             />
@@ -38,7 +38,8 @@ export default function Header() {
             ].map((item) => (
               <Link
                 key={item}
-                href={`/${item.toLowerCase()}`}
+                href={`/${item==="Home" ? "":item.toLowerCase()}`}
+
                 className="text-sm transition-colors hover:opacity-70"
                 style={{ color: "var(--tigat-gray-medium)" }}
               >
@@ -76,7 +77,7 @@ export default function Header() {
             ].map((item) => (
               <Link
                 key={item}
-                href={`/${item.toLowerCase()}`}
+                href={`/${item==="Home" ? "":item.toLowerCase()}`}
                 className="text-sm bg-gray-100 w-full text-center  py-2 rounded-lg"
                 style={{ color: "var(--tigat-gray-medium)" }}
               >

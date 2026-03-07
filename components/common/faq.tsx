@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, Zap, Rocket } from "lucide-react";
+import Link from "next/link";
 
 interface FAQItem {
   question: string;
@@ -24,13 +25,13 @@ export default function FAQ() {
   const allFAQs: FAQItem[] = [
     // 🟦 UI DESIGN
     {
-      question: "What services does Apex provide?",
+      question: "What services does Tigat Tech provide?",
       answer:
-        "Apex offers a range of services including design, engineering, and project management. We specialize in user experience design, mobile app development, custom software development, branding and identity, and more.",
+        "Tigat Tech offers a range of services including design, engineering, and project management. We specialize in user experience design, mobile app development, custom software development, branding and identity, and more.",
       category: "UI Design",
     },
     {
-      question: "How can Apex help my business?",
+      question: "How can Tigat Tech help my business?",
       answer:
         "We help businesses transform their digital presence through innovative design and development solutions. Our team works closely with you to understand your goals and deliver results that exceed expectations.",
       category: "UI Design",
@@ -50,7 +51,7 @@ export default function FAQ() {
 
     // 🟪 UX DESIGN
     {
-      question: "What industries does Apex work with?",
+      question: "What industries does Tigat Tech work with?",
       answer:
         "We work with businesses across various industries including technology, healthcare, finance, e-commerce, and more. Our diverse experience allows us to bring fresh perspectives to any project.",
       category: "UX Design",
@@ -205,13 +206,14 @@ export default function FAQ() {
                 If the question is not available on our FAQ section. Feel free
                 to contact us personally.
               </p>
-              <button
+              <Link
+              href={'/contact'}
                 className="text-white font-semibold px-8 py-3 rounded-full w-full transition-opacity hover:opacity-90 mb-4 flex items-center justify-center gap-2 shadow-md"
                 style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}
               >
                 <Rocket className="w-4 h-4" />
                 Ask Question
-              </button>
+              </Link>
             </div>
           </div>
 

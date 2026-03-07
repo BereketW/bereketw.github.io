@@ -98,11 +98,11 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, delay }) => {
 // --- Main Component ---
 const HeroSection = () => {
   const stats = [
-    { value: '200+', label: 'Clients' },
-    { value: '280+', label: 'Projects' },
+    { value: '10+', label: 'Clients' },
+    { value: '50+', label: 'Projects' },
     { value: '100%', label: 'Happy Clients' },
-    { value: '420K', label: 'Followers' },
-    { value: '10+', label: 'Years Of Experience' },
+    { value: '1K +', label: 'Followers' },
+    { value: '5+', label: 'Years Of Experience' },
   ];
 
   return (
