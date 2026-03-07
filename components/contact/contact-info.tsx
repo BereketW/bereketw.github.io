@@ -4,17 +4,17 @@ export default function ContactInfo() {
   const contactItems = [
     {
       title: "You can email us here",
-      value: "support@apex.com",
+      value: "tigattech@gmail.com",
       icon: Mail,
     },
     {
       title: "Give us a call on",
-      value: "+91 00000 00000",
+      value: "+251934424244",
       icon: Phone,
     },
     {
       title: "Office Hours",
-      value: "9:00 am - 6:00 pm",
+      value: "8:00 am - 6:00 pm",
       icon: Clock,
     },
   ];

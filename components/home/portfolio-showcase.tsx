@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type PortfolioProject = {
   title: string;
@@ -89,13 +90,14 @@ export default function PortfolioShowcase({
 
         {/* View All Button */}
         <div className="flex justify-center">
-          <button
+          <Link
+          href={'/works'}
             className="px-8 py-3 rounded-full text-white font-semibold transition-opacity hover:opacity-90 flex items-center gap-2 shadow-md"
             style={{ backgroundColor: "var(--tigat-accent)", boxShadow: "0 4px 14px rgba(255,128,78,0.3)" }}
           >
             View All Projects
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

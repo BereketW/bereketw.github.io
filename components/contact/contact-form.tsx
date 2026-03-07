@@ -60,7 +60,7 @@ export default function Hero() {
               className="text-base mb-8 leading-relaxed"
               style={{ color: "var(--apex-gray-medium)" }}
             >
-              At Apex, we value your inquiries, feedback, and collaborations.
+              At Tigat Tech, we value your inquiries, feedback, and collaborations.
               Whether you are interested in our digital services, have questions
               about our projects
             </p>
