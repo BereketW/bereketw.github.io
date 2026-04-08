@@ -1,15 +1,20 @@
 import { Mail, Phone, Clock, ArrowRight } from "lucide-react";
 
+/**
+ * Renders a section displaying various contact information items.
+ * Each item includes a title, value, and an associated icon.
+ * This component is typically used on a contact page or footer.
+ */
 export default function ContactInfo() {
   const contactItems = [
     {
       title: "You can email us here",
-      value: "tigattech@gmail.com",
+      value: "contact@example.com",
       icon: Mail,
     },
     {
       title: "Give us a call on",
-      value: "+251934424244",
+      value: "+1-555-123-4567",
       icon: Phone,
     },
     {
@@ -34,20 +39,20 @@ export default function ContactInfo() {
                   <div className="flex-1">
                     <p
                       className="text-sm mb-2"
-                      style={{ color: "var(--apex-gray-medium)" }}
+                      style={{ color: "var(--generic-color-medium)" }}
                     >
                       {item.title}
                     </p>
                     <p
                       className="font-semibold text-lg"
-                      style={{ color: "var(--apex-gray-dark)" }}
+                      style={{ color: "var(--generic-color-dark)" }}
                     >
                       {item.value}
                     </p>
                   </div>
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ml-4"
-                    style={{ backgroundColor: "var(--apex-primary)" }}
+                    style={{ backgroundColor: "var(--generic-color-primary)" }}
                   >
                     <ArrowRight className="w-5 h-5 text-white" />
                   </div>
